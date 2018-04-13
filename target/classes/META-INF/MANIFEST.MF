@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: automaint
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Brian Scudder
+Implementation-Vendor-Id: com.scudder.automaint
+Build-Jdk: 1.8.0_144
+Implementation-URL: http://projects.spring.io/spring-boot/automaint/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+

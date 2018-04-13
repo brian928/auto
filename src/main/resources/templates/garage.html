@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>Auto Maint</title>
+
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+    <h2>garage1</h2>
+    <div th:if="${not #lists.isEmpty(vehicles)}">
+        <h2>My Garage</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>Id</th>
+                <th>Year</th>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Description</th>
+                <th>Odometer</th>
+                <th>Select</th>
+            </tr>
+            <tr th:each="vehicle : ${vehicles}">
+                <td th:text="${vehicle.id}"><a href="/vehicle/${vehicle.id}">Id</a></td>
+                <td th:text="${vehicle.year}">Year</td>
+                <td th:text="${vehicle.make}">Make</td>
+                <td th:text="${vehicle.model}">Model</td>
+                <td th:text="${vehicle.description}">Description</td>
+                <td th:text="${vehicle.odometer}">Odometer</td>
+                <td><a class="btn btn-default" role="button"  href="#" th:href="${'/vehicle/' + vehicle.id}">Select</a></td>
+            </tr>
+        </table>
+    </div>
+    <div class="row">
+        <a class="btn btn-default" role="button"  href="#" th:href="@{vehicle/new}" >New Vehicle</a>
+    </div>
+</div>
+
+</body>
+</html>
